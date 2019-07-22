@@ -279,6 +279,206 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/HPU第一次积分赛 E.Max Gcd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="passerby001">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="passerby001">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/22/HPU第一次积分赛 E.Max Gcd/" class="post-title-link" itemprop="url">HPU第一次积分赛 E.Max Gcd</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-22 11:17:08 / Modified: 11:22:39" itemprop="dateCreated datePublished" datetime="2019-07-22T11:17:08+08:00">2019-07-22</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HPU第一次积分赛/" itemprop="url" rel="index"><span itemprop="name">HPU第一次积分赛</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HPU第一次积分赛/Gcd/" itemprop="url" rel="index"><span itemprop="name">Gcd</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>E. Max Gcd</p>
+<blockquote>
+<p>单点时限: 2.0 sec<br>内存限制: 512 MB</p>
+</blockquote>
+<blockquote>
+<p>一个数组a，现在你需要删除某一项使得它们的gcd最大，求出这个最大值。</p>
+</blockquote>
+<blockquote>
+<p><strong>输入格式</strong><br>第一行输入一个正整数n，表示数组的大小，接下来一行n个数，第i个数为ai。(2≤n≤105,1≤ai≤109)</p>
+</blockquote>
+<blockquote>
+<p><strong>输出格式</strong><br>输出删除掉某个数以后的gcd的最大值。</p>
+</blockquote>
+<blockquote>
+<p><strong>样例</strong></p>
+</blockquote>
+<blockquote>
+<p>input<br>4<br>2 4 8 1<br>outpu|<br>2</p>
+</blockquote>
+<blockquote>
+<p>input<br>4<br>1 2 3 4</p>
+</blockquote>
+<blockquote>
+<p>output<br>1</p>
+</blockquote>
+<p><strong>提示</strong><br>样例一：删除第四个元素后，2,4,8的最大公因子为2。<br>样例二：无论删除哪一个，最大公因子都为1。</p>
+<p>这个题刚开始想着直接暴力，后来发现时间不允许就放弃了，赛后我是师父说直接先把数组从前到后依次gcd存在一个数组里，然后在从后向前依次gcd再放另一个数组里，然后在直接暴力就行了！<br><img src="https://img-blog.csdnimg.cn/20190720181632611.png" alt="不会使用作图工具大佬们见谅"><br>红线代表从前向后依次gcd，蓝线是从后向前。然后一个一个去除保留最大的数据就行！</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100100</span>],b[<span class="number">100100</span>],c[<span class="number">100100</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a[<span class="number">1</span>];</span><br><span class="line">	b[<span class="number">1</span>]=a[<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">		b[i]=__gcd(b[i<span class="number">-1</span>],a[i]);<span class="comment">//从前向后依次gcd</span></span><br><span class="line">	&#125;</span><br><span class="line">	c[n]=a[n];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		c[i]=__gcd(c[i+<span class="number">1</span>],a[i]);<span class="comment">//从后向前依次gcd</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> maxn=max(b[n<span class="number">-1</span>],c[<span class="number">2</span>]);<span class="comment">//因为防止数组下标越界所以事先比较去掉第一项和</span></span><br><span class="line">							<span class="comment">//去掉最后一项哪个大，保留打的一个</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line"><span class="comment">//b[i-1]和c[i+1]刚好是第i项之前的所有项的gcd和第i项之后的所有项的gcd	</span></span><br><span class="line">		maxn=max(__gcd(b[i<span class="number">-1</span>],c[i+<span class="number">1</span>]),maxn);</span><br><span class="line">		<span class="comment">//因为一直保留的是最大的值，所以最后的maxn就是答案</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;maxn&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/HDU-1811-Rank of Tetris/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -324,7 +524,7 @@
                 
               
 
-              <time title="Created: 2019-07-22 09:55:35 / Modified: 10:13:30" itemprop="dateCreated datePublished" datetime="2019-07-22T09:55:35+08:00">2019-07-22</time>
+              <time title="Created: 2019-07-22 09:55:35 / Modified: 11:24:47" itemprop="dateCreated datePublished" datetime="2019-07-22T09:55:35+08:00">2019-07-22</time>
             </span>
           
 
@@ -344,6 +544,13 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HDU/" itemprop="url" rel="index"><span itemprop="name">HDU</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HDU/拓扑排序/" itemprop="url" rel="index"><span itemprop="name">拓扑排序</span></a></span>
 
                 
                 
@@ -663,7 +870,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -678,7 +885,13 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span>
         
       </div>
@@ -695,7 +908,11 @@
         
           
         
-        <span class="site-state-item-count">2</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
         
       </div>
