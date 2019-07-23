@@ -73,6 +73,33 @@
     </entry>
     
     
+    
+    <entry>
+      <title>CF-1197C-C. Array Splitting</title>
+      <link href="/2018/07/23/CF-1197C-C.%20Array%20Splitting/"/>
+      <url>/2018/07/23/CF-1197C-C.%20Array%20Splitting/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CF-1197C-C-Array-Splitting"><a href="#CF-1197C-C-Array-Splitting" class="headerlink" title="CF-1197C-C. Array Splitting"></a>CF-1197C-C. Array Splitting</h1><blockquote><center>C. Array Splitting</center><center>time limit per test2 seconds<center>memory limit per test256 megabytes<center>inputstandard input<center>outputstandard output</center></center></center></center></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are given a sorted array a1,a2,…,an (for each index i&gt;1 condition ai≥ai−1 holds) and an integer k.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are asked to divide this array into k non-empty consecutive subarrays. Every element in the array should be included in exactly one subarray.</p></blockquote><blockquote><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let max(i) be equal to the maximum in the i-th subarray, and min(i) be equal to the minimum in the i-th subarray. The cost of division is equal to ∑i=1k(max(i)−min(i)). For example, if a=[2,4,5,5,8,11,19] and we divide it into 3 subarrays in the following way: [2,4],[5,5],[8,11,19], then the cost of division is equal to (4−2)+(5−5)+(19−8)=13.<br>Calculate the minimum cost you can obtain by dividing the array a into k non-empty consecutive subarrays.</p></blockquote><blockquote><p>Input<br>The first line contains two integers n and k (1≤k≤n≤3⋅105).<br>The second line contains n integers a1,a2,…,an (1≤ai≤109, ai≥ai−1).</p></blockquote><blockquote><p>Output<br>Print the minimum cost you can obtain by dividing the array a into k nonempty consecutive subarrays.</p></blockquote><blockquote><p>Examples<br>input<br>6 3<br>4 8 15 16 23 42<br>output<br>12<br>input<br>4 4<br>1 3 3 7<br>output<br>0<br>input<br>8 1<br>1 1 2 3 5 8 13 21<br>output<br>20<br><strong>Note</strong><br>In the first test we can divide array a in the following way: [4,8,15,16],[23],[42].<br><a href="http://codeforces.com/problemset/problem/1197/C" target="_blank" rel="noopener"><strong>题目传送门</strong></a><br>&nbsp;&nbsp;刚开始这一题我一时不会写有点思路但是就是写不出来好难受呀！后来还是问我师傅了！<br>结果发现还是一个贪心，因为他需要最小值所以每次先把距离最大的删除那么结果不就是最小了，先依次作差，然后<strong>sort</strong>排序从大到小依次减去k-1个数就行！剩下的就是答案了</p><pre class=" language-c"><code class="language-c"></code></pre></blockquote><p>#include<iostream></iostream></p><p>#include<algorithm><br>using namespace std;</algorithm></p><p>int a[300300];<br>int b[300300];<br>int main()<br>{<br>    ios::sync_with_stdio(false);<br>    int n,m;<br>    while(cin&gt;&gt;n&gt;&gt;m)<br>    {<br>        cin&gt;&gt;a[0];<br>        int sum=0;<br>        for(int i=1;i&lt;n;i++)<br>        {<br>            cin&gt;&gt;a[i];<br>            b[i-1]=a[i]-a[i-1];//用数组B存差值；<br>            sum+=b[i-1];       //先求差值之和最后再减；<br>        }<br>        sort(b,b+n-1,greater<int>());//从大到小排序<br>        for(int i=0;i&lt;m-1;i++)//从大到小开始删除<br>        {<br>            sum-=b[i];<br>        }<br>        cout&lt;&lt;sum&lt;&lt;endl; //输出剩余的结果<br>    }<br>}<br>```</int></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CF </tag>
+            
+            <tag> 贪心 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
