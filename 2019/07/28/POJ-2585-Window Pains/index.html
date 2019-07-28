@@ -4,8 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 一Wa哇一天">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="POJ-2585-Window Pains, 一Wa哇一天">
+    <meta name="description" content="POJ-2585-Window Pains Window Pains
+Time Limit: 1000MS    Memory Limit: 65536K
+Total Submissions: 2915        Accepted: 1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | 一Wa哇一天</title>
+    <title>POJ-2585-Window Pains | 一Wa哇一天</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        POJ-2585-Window Pains
                     </div>
                 </div>
             </div>
@@ -375,12 +377,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/拓扑排序/" target="_blank">
+                                <span class="chip bg-color">拓扑排序</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/POJ/" class="post-category" target="_blank">
+                                POJ
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -388,7 +403,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-07-21
+                    2019-07-28
                 </div>
 
                 
@@ -404,15 +419,140 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="POJ-2585-Window-Pains"><a href="#POJ-2585-Window-Pains" class="headerlink" title="POJ-2585-Window Pains"></a>POJ-2585-Window Pains</h1><center> Window Pains</center>
+<center>Time Limit: 1000MS    Memory Limit: 65536K</center>
+<center>Total Submissions: 2915        Accepted: 1461</center>
+
+<p><strong>Description</strong></p>
+<blockquote>
+<p>&emsp;Boudreaux likes to multitask, especially when it comes to using his computer. Never satisfied with just running one application at a time, he usually runs nine applications, each in its own window. Due to limited screen real estate, he overlaps these windows and brings whatever window he currently needs to work with to the foreground. If his screen were a 4 x 4 grid of squares, each of Boudreaux’s windows would be represented by the following 2 x 2 windows:<br>               <center><img src="https://i.loli.net/2019/07/28/5d3d79082a30f43440.png" alt></center><br>When Boudreaux brings a window to the foreground, all of its squares come to the top, overlapping any squares it shares with other windows. For example, if window 1and then window 2 were brought to the foreground, the resulting representation would be:<br>1    2    2    ?<br>1    2    2    ?<br>?    ?    ?    ?<br>?    ?    ?    ?<br>If window 4 were then brought to the foreground:<br>1    2    2    ?<br>4    4    2    ?<br>4    4    ?    ?<br>?    ?    ?    ?<br>. . . and so on . . .<br>Unfortunately, Boudreaux’s computer is very unreliable and crashes often. He could easily tell if a crash occurred by looking at the windows and seeing a graphical representation that should not occur if windows were being brought to the foreground correctly. And this is where you come in . . .<br>Input</p>
+</blockquote>
+<blockquote>
+<p>Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets. </p>
+</blockquote>
+<blockquote>
+<p>A single data set has 3 components:<br>Start line - A single line:<br>START </p>
+</blockquote>
+<blockquote>
+<p>Screen Shot - Four lines that represent the current graphical representation of the windows on Boudreaux’s screen. Each position in this 4 x 4 matrix will represent the current piece of window showing in each square. To make input easier, the list of numbers on each line will be delimited by a single space.<br>End line - A single line:<br>END </p>
+</blockquote>
+<blockquote>
+<p>After the last data set, there will be a single line:<br>ENDOFINPUT </p>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong> that each piece of visible window will appear only in screen areas where the window could appear when brought to the front. For instance, a 1 can only appear in the top left quadrant.<br>Output</p>
+</blockquote>
+<blockquote>
+<p>For each data set, there will be exactly one line of output. If there exists a sequence of bringing windows to the foreground that would result in the graphical representation of the windows on Boudreaux’s screen, the output will be a single line with the statement: </p>
+</blockquote>
+<blockquote>
+<p>THESE WINDOWS ARE CLEAN<br>Otherwise, the output will be a single line with the statement:<br>THESE WINDOWS ARE BROKEN </p>
+</blockquote>
+<p><strong>Sample Input</strong></p>
+<pre class=" language-c"><code class="language-c">START
+<span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">3</span>
+<span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span> <span class="token number">6</span>
+<span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span> <span class="token number">9</span>
+<span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span> <span class="token number">9</span>
+END
+START
+<span class="token number">1</span> <span class="token number">1</span> <span class="token number">3</span> <span class="token number">3</span>
+<span class="token number">4</span> <span class="token number">1</span> <span class="token number">3</span> <span class="token number">3</span>
+<span class="token number">7</span> <span class="token number">7</span> <span class="token number">9</span> <span class="token number">9</span>
+<span class="token number">7</span> <span class="token number">7</span> <span class="token number">9</span> <span class="token number">9</span>
+END
+ENDOFINPUT</code></pre>
+<p><strong>Sample Output</strong></p>
+<pre class=" language-c"><code class="language-c">THESE WINDOWS ARE CLEAN
+THESE WINDOWS ARE BROKEN </code></pre>
+<p>不得不说Poj的题就是难，想了好久但是可算有点思路了，结果交了一发，直接Wa，这谁受得了呀，后来找了好几篇博客才看明白，因为每个方格都会有一组固定的几个数，<strong>我们事先将每个方格里面的数打标打出来，然后在输入图形的时候进行处理，输入的谁，谁就就大于其他值，例如：(3,3)这个位置，可能出现的数字是：5,6,8,9；如果在输入的时候，输入的是8，那就在构建拓排图的时候让8&gt;6,8&gt;6,8&gt;9;遇到自身的话就跳过，这样构好图后就按照平常的拓排进行跑就行了，只有又环的出现那么久不满足情况</strong>，另外要<strong>注意去重</strong>，应为方格的情况可能冲突所以要注意去重；</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;queue></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;vector></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;set></span></span>
+using namespace std<span class="token punctuation">;</span>
+
+<span class="token keyword">typedef</span> pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> pa<span class="token punctuation">;</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>v<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> mp<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+string s<span class="token punctuation">;</span>
+<span class="token keyword">int</span> in<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+set<span class="token operator">&lt;</span>pa<span class="token operator">></span>se<span class="token punctuation">;</span>
+<span class="token keyword">int</span> mmp<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span>                 <span class="token comment" spellcheck="true">//前两个4表示的是位置，第几行第几列，最后一个6表示里面可能有的数字，                                                </span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">//注意我的每一个开始的数字是表示这个位置可能有几个数字</span>
+<span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//这样的话方便以后的构图</span>
+<span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">gt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//大概的构造图形，把每个点的大小关系都放进set，进行去重;</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>mmp<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> xx<span class="token operator">=</span>mmp<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>xx<span class="token operator">!=</span>mp<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//如果相等就不放进去</span>
+        <span class="token punctuation">{</span>
+            se<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>xx<span class="token punctuation">,</span>mp<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>s<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token operator">==</span><span class="token string">"ENDOFINPUT"</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>    
+    <span class="token comment" spellcheck="true">//    数据初始化，很重要！！！</span>
+        se<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">memset</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span> in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                cin<span class="token operator">>></span>mp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token function">gt</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//进行大小关系的确定</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        cin<span class="token operator">>></span>s<span class="token punctuation">;</span>
+
+        pa p<span class="token punctuation">;</span>
+        set<span class="token operator">&lt;</span>pa<span class="token operator">></span><span class="token punctuation">:</span><span class="token punctuation">:</span>iterator it<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//从set里面取数，然后开始正式的构建拓排有向图</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>it<span class="token operator">=</span>se<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>it<span class="token operator">!=</span>se<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>it<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//</span>
+        <span class="token punctuation">{</span>
+            p<span class="token operator">=</span><span class="token operator">*</span>it<span class="token punctuation">;</span>
+            <span class="token keyword">int</span> x<span class="token operator">=</span>p<span class="token punctuation">.</span>first <span class="token punctuation">;</span>
+            <span class="token keyword">int</span> y<span class="token operator">=</span>p<span class="token punctuation">.</span>second <span class="token punctuation">;</span>
+            v<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            in<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//入度加一</span>
+        <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//查找入度为零的节点,从入度为零的节点开始删除</span>
+        queue<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>q<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>in<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">9</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//拓排删除节点</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> x<span class="token operator">=</span>q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+            k<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>v<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                in<span class="token punctuation">[</span>v<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//都一个节点度数减少一</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>in<span class="token punctuation">[</span>v<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//如果k最后不等0，说明还有节点没被删除，也就是说形成了环</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"THESE WINDOWS ARE BROKEN"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"THESE WINDOWS ARE CLEAN"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -571,9 +711,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Hello World》
+                    《POJ-2585-Window Pains》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/21/hello-world/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/28/POJ-2585-Window Pains/" property="cc:attributionName"
                rel="cc:attributionURL">
                 一Wa哇一天
             </a> is licensed under a
@@ -614,7 +754,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-07-21T22-38-54',
+        id: '2019-07-28T18-32-48',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -633,7 +773,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sun Jul 21 2019 22:38:54 GMT+0800',
+    id: 'Sun Jul 28 2019 18:32:48 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -657,9 +797,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2019/07/21/hello-world/';
-        this.page.identifier = '/2019/07/21/hello-world/';
-        this.page.title = 'Hello World';
+        this.page.url = 'http://yoursite.com/2019/07/28/POJ-2585-Window Pains/';
+        this.page.identifier = '/2019/07/28/POJ-2585-Window Pains/';
+        this.page.title = 'POJ-2585-Window Pains';
     };
     let disqus_shortname = '';
 
@@ -963,59 +1103,50 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/07/22/HDU-1811-Rank of Tetris/">
+                <a href="/2019/07/28/POJ-2585-Window Pains/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="HDU-1811-Rank of Tetris">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="POJ-2585-Window Pains">
                         
-                        <span class="card-title">HDU-1811-Rank of Tetris</span>
+                        <span class="card-title">POJ-2585-Window Pains</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            #HDU-1811-Rank of TetrisHDU-1811-Rank of Tetris
-
-自从Lele开发了Rating系统，他的Tetris事业更是如虎添翼，不久他遍把这个游戏推向了全球。
-
-
-为了更好的符合那些爱好者的喜好，Le
+                            POJ-2585-Window Pains Window Pains
+Time Limit: 1000MS    Memory Limit: 65536K
+Total Submissions: 2915        Accepted: 1
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HDU/" class="post-category" target="_blank">
-                                    HDU
-                                </a>
-                            
-                            <a href="/categories/HDU/拓扑排序/" class="post-category" target="_blank">
-                                    拓扑排序
+                            <a href="/categories/POJ/" class="post-category" target="_blank">
+                                    POJ
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/拓扑排序/" target="_blank">
                         <span class="chip bg-color">拓扑排序</span>
-                    </a>
-                    
-                    <a href="/tags/HDU/" target="_blank">
-                        <span class="chip bg-color">HDU</span>
                     </a>
                     
                 </div>
@@ -1026,37 +1157,48 @@ gitment.render('gitment-content');
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/21/hello-world/">
+                <a href="/2019/07/28/HPU第二次积分赛/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="HPU第二次积分赛">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">HPU第二次积分赛</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            今天又是自闭的一天，D题和E题卡了我好久，本来就是两道水题，E题不知道为啥爆int,D题我智障的不x写成y。A题没想起来，B题有思路但是就是不想写，我感觉我都要卡死在图论上太难受了；还有H题巨水，但是就是看见逆元了没敢写。我真是恨死自己了；以后多写题；敢开新题！每个题都要读！！！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-21
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            一Wa哇一天
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HPU/" class="post-category" target="_blank">
+                                    HPU
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HPU第二次积分赛/" target="_blank">
+                        <span class="chip bg-color">HPU第二次积分赛</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
