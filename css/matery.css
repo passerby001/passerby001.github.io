@@ -366,6 +366,12 @@ header .go-back i {
 
 .post-cover {
     height: 40vh !important;
+    /*
+    height: 100vh !important;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+     */
 }
 
 .bg-cover:after {
